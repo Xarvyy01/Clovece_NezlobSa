@@ -8,8 +8,8 @@
 plocha::plocha() {
 
     //1 Riadok
-    policka[0][0].setGraphic('#');
-    policka[1][0].setGraphic('#');
+    policka[0][0].setGraphic('#')->setIndexHome(1);
+    policka[1][0].setGraphic('#')->setIndexHome(1);
     policka[2][0].setGraphic(' ');
     policka[3][0].setGraphic(' ');
     policka[4][0].setGraphic('o')->setIndex(1);
@@ -17,12 +17,12 @@ plocha::plocha() {
     policka[6][0].setGraphic('&')->setIndex(3)->setHome(true);
     policka[7][0].setGraphic(' ');
     policka[8][0].setGraphic(' ');
-    policka[9][0].setGraphic('#');
-    policka[10][0].setGraphic('#');
+    policka[9][0].setGraphic('#')->setIndexHome(2);
+    policka[10][0].setGraphic('#')->setIndexHome(2);
 
     //2 Riadok
-    policka[0][1].setGraphic('#');
-    policka[1][1].setGraphic('#');
+    policka[0][1].setGraphic('#')->setIndexHome(1);;
+    policka[1][1].setGraphic('#')->setIndexHome(1);;
     policka[2][1].setGraphic(' ');
     policka[3][1].setGraphic(' ');
     policka[4][1].setGraphic('o')->setIndex(40);
@@ -30,8 +30,8 @@ plocha::plocha() {
     policka[6][1].setGraphic('o')->setIndex(4);
     policka[7][1].setGraphic(' ');
     policka[8][1].setGraphic(' ');
-    policka[9][1].setGraphic('#');
-    policka[10][1].setGraphic('#');
+    policka[9][1].setGraphic('#')->setIndexHome(2);;
+    policka[10][1].setGraphic('#')->setIndexHome(2);;
 
     //3 Riadok
     policka[0][2].setGraphic(' ');
@@ -125,8 +125,8 @@ plocha::plocha() {
     policka[10][8].setGraphic(' ');
 
     //10 Riadok
-    policka[0][9].setGraphic('#');
-    policka[1][9].setGraphic('#');
+    policka[0][9].setGraphic('#')->setIndexHome(3);;
+    policka[1][9].setGraphic('#')->setIndexHome(3);;
     policka[2][9].setGraphic(' ');
     policka[3][9].setGraphic(' ');
     policka[4][9].setGraphic('o')->setIndex(24);
@@ -134,12 +134,12 @@ plocha::plocha() {
     policka[6][9].setGraphic('o')->setIndex(20);
     policka[7][9].setGraphic(' ');
     policka[8][9].setGraphic(' ');
-    policka[9][9].setGraphic('#');
-    policka[10][9].setGraphic('#');
+    policka[9][9].setGraphic('#')->setIndexHome(4);;
+    policka[10][9].setGraphic('#')->setIndexHome(4);;
 
     //11 Riadok
-    policka[0][10].setGraphic('#');
-    policka[1][10].setGraphic('#');
+    policka[0][10].setGraphic('#')->setIndexHome(3);;
+    policka[1][10].setGraphic('#')->setIndexHome(3);;
     policka[2][10].setGraphic(' ');
     policka[3][10].setGraphic(' ');
     policka[4][10].setGraphic('&')->setIndex(23)->setHome(true);
@@ -147,8 +147,8 @@ plocha::plocha() {
     policka[6][10].setGraphic('o')->setIndex(21);
     policka[7][10].setGraphic(' ');
     policka[8][10].setGraphic(' ');
-    policka[9][10].setGraphic('#');
-    policka[10][10].setGraphic('#');
+    policka[9][10].setGraphic('#')->setIndexHome(4);;
+    policka[10][10].setGraphic('#')->setIndexHome(4);;
 }
 
 void plocha::update() {

@@ -15,6 +15,7 @@ private:
     int x ;
     int y ;
     int index;
+    int indexHome = -1;
     char graphic = '*';
     bool isHome = false;
 
@@ -49,6 +50,19 @@ public:
         return this;
     }
 
+    policko* setIndexHome(int index) {
+        this->indexHome = index;
+        return this;
+    }
+
+    panacik* getFigurka() {
+        return this->figurka;
+    }
+
+    int getIndexHome() {
+        return this->indexHome;
+    }
+
     int getVectorX() {
         return this->x;
     }
@@ -79,6 +93,7 @@ public:
     void odstranPanacika() {
         this->figurka = nullptr;
     }
+
 };
 
 

@@ -10,4 +10,8 @@ add_executable(Hra_Clovece main.cpp
         policko.h
         panacik.cpp
         panacik.h
+        hrac.cpp
+        hrac.h
+        hra.cpp
+        hra.h
 )
