@@ -12,6 +12,7 @@ private:
     int x;
     int y;
     int indexPolicka = -1000;
+    int indexFigurky;
     int indexHraca;
     char graphic = 'w';
 
@@ -22,6 +23,14 @@ public:
     void postavPanacika(int x, int y) {
         this->x = x;
         this->y = y;
+    }
+
+    void setIndexFigurky(int index) {
+        this->indexFigurky = index;
+    }
+
+    int getIndexFigurky() {
+        return this->indexFigurky;
     }
 
     void setGraphic(char graphic) {

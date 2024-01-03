@@ -156,7 +156,7 @@ void plocha::update() {
     panacik* figurka_test = new panacik();
     figurka_test->setGraphic('M');
     postavPanacikaNaIndex(1, figurka_test);
-    postavPanacikaNaIndex(34, figurka_test);
+    postavPanacikaNaIndex(5 , figurka_test);
 
 
 

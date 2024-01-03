@@ -6,7 +6,30 @@
 #define HRA_CLOVECE_HRA_H
 
 
+#include "plocha.h"
+#include "hrac.h"
+
 class hra {
+
+private:
+
+    int pocetHracov = 0;
+    hrac* hraci[4];
+
+    plocha* hernaPlocha;
+
+public:
+
+    hra(plocha hraciaPlocha);
+
+    void pridajHraca(hrac* hrac){
+        hraci[pocetHracov] = hrac;
+        pocetHracov++;
+    }
+
+    int getPocetHracov() {
+        return pocetHracov;
+    }
 
 };
 
