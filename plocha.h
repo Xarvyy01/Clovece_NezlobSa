@@ -7,6 +7,7 @@
 
 
 #include "policko.h"
+#include <vector>
 
 class plocha {
 
@@ -24,6 +25,8 @@ public:
     void postavPanacikaNaIndex(int index, panacik* figurka);
 
     policko* najdiPolickoByIndex(int index);
+
+    std::vector<policko*> najdiDomcekPolickaByIndex(int index);
 
 };
 

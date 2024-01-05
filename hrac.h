@@ -6,6 +6,7 @@
 #define HRA_CLOVECE_HRAC_H
 
 #include "policko.h"
+#include <vector>
 
 class hrac {
 
@@ -20,6 +21,7 @@ private:
     policko* domcek[4];
     panacik* figurkyPlocha[4];
     panacik* panacikovia[4];
+    policko* polickoHome = nullptr;
 
 public:
 
@@ -39,6 +41,9 @@ public:
         pocetFiguriekNaPloche++;
     }
 
+    void pridajHomePolicko(policko* policko) {
+        this->polickoHome = policko;
+    }
     panacik* vyberFigurkuByIndex(int index) {
 
         for (int i = 0; i < 4; ++i) {
@@ -50,14 +55,15 @@ public:
         return nullptr;
     }
 
-    void pridajDoDomceka(policko* policko) {
-        domcek[pocetPolicokVdomceku] = policko;
-        this->pocetPolicokVdomceku++;
+    void pridajDoDomceka(std::vector<policko*> policko) {
+        for (int i = 0; i < 4; ++i) {
+            domcek[i] = policko[i];
+        }
     }
 
     void pridajFigurkuDoDomceka(panacik* figurka) {
         figurka->setGraphic(this->graphic);
-        domcek[pocetPolicokVdomceku]->pridajPanacika(figurka);
+        domcek[pocetFiguriekVdomceku]->pridajPanacika(figurka);
         pocetFiguriekVdomceku++;
     }
 

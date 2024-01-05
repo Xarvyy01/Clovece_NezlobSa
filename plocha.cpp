@@ -4,6 +4,8 @@
 
 #include "plocha.h"
 #include <iostream>
+#include <vector>
+
 
 plocha::plocha() {
 
@@ -156,7 +158,7 @@ void plocha::update() {
     panacik* figurka_test = new panacik();
     figurka_test->setGraphic('M');
     postavPanacikaNaIndex(1, figurka_test);
-    postavPanacikaNaIndex(5 , figurka_test);
+    postavPanacikaNaIndex(17 , figurka_test);
 
 
 
@@ -165,6 +167,7 @@ void plocha::update() {
         std::cout << " " << std::endl;
 
         for (int j = 0; j < sizeOfArray; ++j) {
+            policka[j][i].setVectorX(j)->setVectorY(i);
             std::cout << policka[j][i].getGraphic();
             std::cout << " ";
         }
@@ -194,5 +197,24 @@ policko* plocha::najdiPolickoByIndex(int index) {
 
         }
     }
+
+}
+
+std::vector<policko*> plocha::najdiDomcekPolickaByIndex(int index) {
+
+    std::vector<policko*> array;
+    int pocet = 0;
+    for (int i = 0; i < sizeOfArray; ++i) {
+        for (int j = 0; j < sizeOfArray; ++j) {
+
+            if (policka[j][i].getIndexHome() == index) {
+                array.push_back(&policka[j][i]);
+                pocet++;
+            }
+
+        }
+    }
+
+    return array;
 
 }
