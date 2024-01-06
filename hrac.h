@@ -85,6 +85,22 @@ public:
 
     }
 
+    void pridajPolickoHome(policko* policko) {
+        this->polickoHome = policko;
+    }
+
+    void polozFigurkuNaHomePolickoByIndex() {
+
+        for (int i = 0; i < pocetFiguriekVdomceku; ++i) {
+            if(domcek[i]->getFigurka() != nullptr) {
+                this->polickoHome->pridajPanacika(domcek[i]->getFigurka());
+                domcek[i]->odstranPanacika();
+                break;
+            }
+        }
+
+    }
+
 };
 
 

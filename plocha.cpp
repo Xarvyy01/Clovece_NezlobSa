@@ -16,7 +16,7 @@ plocha::plocha() {
     policka[3][0].setGraphic(' ');
     policka[4][0].setGraphic('o')->setIndex(1);
     policka[5][0].setGraphic('o')->setIndex(2);
-    policka[6][0].setGraphic('&')->setIndex(3)->setHome(true);
+    policka[6][0].setGraphic('&')->setIndex(3)->setHome(true)->setIndexHome(2);
     policka[7][0].setGraphic(' ');
     policka[8][0].setGraphic(' ');
     policka[9][0].setGraphic('#')->setIndexHome(2);
@@ -62,7 +62,7 @@ plocha::plocha() {
     policka[10][3].setGraphic(' ');
 
     //5 Riadok
-    policka[0][4].setGraphic('&')->setIndex(33)->setHome(true);
+    policka[0][4].setGraphic('&')->setIndex(33)->setHome(true)->setIndexHome(1);
     policka[1][4].setGraphic('o')->setIndex(34);
     policka[2][4].setGraphic('o')->setIndex(35);
     policka[3][4].setGraphic('o')->setIndex(36);
@@ -98,7 +98,7 @@ plocha::plocha() {
     policka[7][6].setGraphic('o')->setIndex(16);
     policka[8][6].setGraphic('o')->setIndex(15);
     policka[9][6].setGraphic('o')->setIndex(14);
-    policka[10][6].setGraphic('&')->setIndex(13)->setHome(true);
+    policka[10][6].setGraphic('&')->setIndex(13)->setHome(true)->setIndexHome(3);
 
     //8 Riadok
     policka[0][7].setGraphic(' ');
@@ -144,7 +144,7 @@ plocha::plocha() {
     policka[1][10].setGraphic('#')->setIndexHome(3);;
     policka[2][10].setGraphic(' ');
     policka[3][10].setGraphic(' ');
-    policka[4][10].setGraphic('&')->setIndex(23)->setHome(true);
+    policka[4][10].setGraphic('&')->setIndex(23)->setHome(true)->setIndexHome(4);
     policka[5][10].setGraphic('o')->setIndex(22);
     policka[6][10].setGraphic('o')->setIndex(21);
     policka[7][10].setGraphic(' ');
@@ -207,7 +207,7 @@ std::vector<policko*> plocha::najdiDomcekPolickaByIndex(int index) {
     for (int i = 0; i < sizeOfArray; ++i) {
         for (int j = 0; j < sizeOfArray; ++j) {
 
-            if (policka[j][i].getIndexHome() == index) {
+            if (policka[j][i].getIndexHome() == index && policka[j][i].getHome() == false) {
                 array.push_back(&policka[j][i]);
                 pocet++;
             }
@@ -217,4 +217,17 @@ std::vector<policko*> plocha::najdiDomcekPolickaByIndex(int index) {
 
     return array;
 
+}
+
+policko *plocha::najdiHomePolickoByIndex(int index) {
+
+    for (int i = 0; i < sizeOfArray; ++i) {
+        for (int j = 0; j < sizeOfArray; ++j) {
+
+            if (policka[j][i].getIndexHome() == index && policka[j][i].getHome() == true) {
+                return &policka[j][i];
+            }
+
+        }
+    }
 }

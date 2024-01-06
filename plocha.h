@@ -28,6 +28,8 @@ public:
 
     std::vector<policko*> najdiDomcekPolickaByIndex(int index);
 
+    policko* najdiHomePolickoByIndex(int index);
+
 };
 
 
