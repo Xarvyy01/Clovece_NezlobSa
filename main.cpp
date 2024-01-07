@@ -8,6 +8,10 @@ int main() {
     hrac player2(2);
     hrac player3(3);
     plocha plocha_hra;
+    //std::vector<char> vec_char = plocha_hra.getHernaPlocha();
+    //for (int i = 0; i < vec_char.size(); ++i) {
+        //std::cout << vec_char[i];
+    //}
     hra game(&plocha_hra);
     game.pridajHraca(&player1);
     game.pridajHraca(&player2);

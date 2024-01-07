@@ -17,6 +17,7 @@ class plocha {
 private:
     policko policka[11][11];
     std::vector<hrac*> hraci;
+    std::vector<char> plocha_char;
 
 public:
 
@@ -39,6 +40,8 @@ public:
     }
 
     policko* najdiFigurkeDomcekApostavFigurku(panacik* figurka);
+
+    std::vector<char> getHernaPlocha();
 
 };
 

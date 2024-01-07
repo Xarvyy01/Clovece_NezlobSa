@@ -250,3 +250,17 @@ policko *plocha::najdiFigurkeDomcekApostavFigurku(panacik *figurka) {
     }
 
 }
+
+std::vector<char> plocha::getHernaPlocha() {
+    for (int i = 0; i < sizeOfArray; ++i) {
+        for (int j = 0; j < sizeOfArray; ++j) {
+
+                plocha_char.push_back(policka[j][i].getGraphic());
+
+        }
+        plocha_char.push_back('0');
+    }
+
+    return  plocha_char;
+
+}
