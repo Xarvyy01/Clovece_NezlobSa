@@ -34,6 +34,18 @@ public:
 
     void hra_cyklus();
 
+    void pridajHracovDoPlochy() {
+
+        std::vector<hrac*> hraci_vector;
+
+        for (int i = 0; i < pocetHracov; ++i) {
+            hraci_vector.push_back(hraci[i]);
+        }
+
+        hernaPlocha->pridajHracov(hraci_vector);
+
+    }
+
 };
 
 

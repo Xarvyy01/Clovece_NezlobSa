@@ -177,13 +177,16 @@ void plocha::update() {
 
 void plocha::postavPanacikaNaIndex(int index, panacik* figurka) {
 
-
+    panacik* temp_panacik;
 
     if (figurka->getIndexPolicka() > 0) {
         najdiPolickoByIndex(figurka->getIndexPolicka())->odstranPanacika();
     }
     int index_temp = (index % 40) + 1;
-    najdiPolickoByIndex(index_temp)->pridajPanacika(figurka);
+    temp_panacik = najdiPolickoByIndex(index_temp)->pridajPanacika(figurka);
+    if (temp_panacik != nullptr) {
+        this->najdiFigurkeDomcekApostavFigurku(temp_panacik)->pridajPanacika(temp_panacik);
+    }
     figurka->setIndexPolicka(index_temp);
 
 }
@@ -232,4 +235,18 @@ policko *plocha::najdiHomePolickoByIndex(int index) {
 
         }
     }
+}
+
+policko *plocha::najdiFigurkeDomcekApostavFigurku(panacik *figurka) {
+
+    for (int i = 0; i < sizeOfArray; ++i) {
+        for (int j = 0; j < sizeOfArray; ++j) {
+
+            if (policka[j][i].getIndexHome() == figurka->getIndexFigurky() && policka[j][i].getFigurka() == nullptr) {
+                return &policka[j][i];
+            }
+
+        }
+    }
+
 }

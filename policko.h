@@ -86,13 +86,23 @@ public:
         return this->isHome;
     }
 
-    void pridajPanacika(panacik* figurka) {
-        this->figurka = figurka;
+    panacik* pridajPanacika(panacik* figurka) {
+
+        panacik* figurka_temp;
+        if (this->figurka == nullptr) {
+            this->figurka = figurka;
+        } else {
+            figurka_temp = this->figurka;
+            this->figurka = figurka;
+            return figurka_temp;
+        }
+        return nullptr;
      }
 
     void odstranPanacika() {
         this->figurka = nullptr;
     }
+
 
 };
 

@@ -7,6 +7,7 @@
 
 
 #include "policko.h"
+#include "hrac.h"
 #include <vector>
 
 class plocha {
@@ -15,7 +16,7 @@ class plocha {
 
 private:
     policko policka[11][11];
-    panacik* figurky[4];
+    std::vector<hrac*> hraci;
 
 public:
 
@@ -30,6 +31,14 @@ public:
     std::vector<policko*> najdiDomcekPolickaByIndex(int index);
 
     policko* najdiHomePolickoByIndex(int index);
+
+    void pridajHracov(std::vector<hrac*> hraci) {
+
+        this->hraci = hraci;
+
+    }
+
+    policko* najdiFigurkeDomcekApostavFigurku(panacik* figurka);
 
 };
 

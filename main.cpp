@@ -44,13 +44,9 @@ int main() {
     player2.pridajFigurkuDoDomceka(figurka3);
     player2.pridajFigurkuDoDomceka(figurka4);
 
+    game.pridajHracovDoPlochy();
+
     game.hra_cyklus();
 
-
-
-
-
-
-    plocha_hra.update();
     return 0;
 }
