@@ -5,9 +5,9 @@
 #include <iostream>
 #include "hra.h"
 
-hra::hra(plocha *hraciaPlocha) {
+hra::hra() {
 
-    this->hernaPlocha = hraciaPlocha;
+
 
 }
 

@@ -12,7 +12,8 @@ int main() {
     //for (int i = 0; i < vec_char.size(); ++i) {
         //std::cout << vec_char[i];
     //}
-    hra game(&plocha_hra);
+    hra game;
+    game.pridajPlochu(&plocha_hra);
     game.pridajHraca(&player1);
     game.pridajHraca(&player2);
     //game.pridajHraca(&player2);

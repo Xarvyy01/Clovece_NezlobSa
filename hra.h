@@ -21,7 +21,7 @@ private:
 
 public:
 
-    hra(plocha* hraciaPlocha);
+    hra();
 
     void pridajHraca(hrac* hrac){
         hraci[pocetHracov] = hrac;
@@ -44,6 +44,10 @@ public:
 
         hernaPlocha->pridajHracov(hraci_vector);
 
+    }
+
+    void pridajPlochu(plocha* herna_plocha) {
+        this->hernaPlocha = herna_plocha;
     }
 
 };
