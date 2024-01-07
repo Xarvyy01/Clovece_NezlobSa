@@ -15,6 +15,7 @@ class plocha {
 
 private:
     policko policka[11][11];
+    panacik* figurky[4];
 
 public:
 

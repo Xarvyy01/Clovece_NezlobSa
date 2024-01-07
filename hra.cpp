@@ -19,9 +19,8 @@ void hra::hra_cyklus() {
         hrac* hrac = hraci[hracNaRade];
 
         if (hrac->getPocetFiguriekVDomceku() != 4) {
-            std::cout << "Na rade je hráč" + hracNaRade << std::endl;
-
-
+            std::cout << "Na rade je hráč: " + std::to_string(hracNaRade + 1) << std::endl;
+            std::cout << "<===========================>" << std::endl;
             std::cout << "1: Hod Kockou" << std::endl;
             std::cout << "2: Kontrola Panačikov" << std::endl;
             std::cout << "3: Ukonči Hru" << std::endl;
@@ -87,6 +86,8 @@ void hra::hra_cyklus() {
             }
 
         }
+
+        hracNaRade++;
         hernaPlocha->update();
 
         if (hracNaRade > pocetHracov - 1) {

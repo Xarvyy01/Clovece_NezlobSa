@@ -177,11 +177,14 @@ void plocha::update() {
 
 void plocha::postavPanacikaNaIndex(int index, panacik* figurka) {
 
+
+
     if (figurka->getIndexPolicka() > 0) {
         najdiPolickoByIndex(figurka->getIndexPolicka())->odstranPanacika();
     }
-    najdiPolickoByIndex(index)->pridajPanacika(figurka);
-    figurka->setIndexPolicka(index);
+    int index_temp = (index % 40) + 1;
+    najdiPolickoByIndex(index_temp)->pridajPanacika(figurka);
+    figurka->setIndexPolicka(index_temp);
 
 }
 
