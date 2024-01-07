@@ -31,6 +31,10 @@ public:
         return this->indexHraca;
     }
 
+    int getPocetFiguriekVDomceku() {
+        return pocetFiguriekVdomceku;
+    }
+
     void pridajFigurkuDoHry(panacik* figurka) {
         panacikovia[pocetFiguriekVhre] = figurka;
         pocetFiguriekVhre++;
@@ -64,6 +68,7 @@ public:
     void pridajFigurkuDoDomceka(panacik* figurka) {
         figurka->setGraphic(this->graphic);
         domcek[pocetFiguriekVdomceku]->pridajPanacika(figurka);
+        pridajFigurkuDoHry(figurka);
         pocetFiguriekVdomceku++;
     }
 
@@ -94,7 +99,9 @@ public:
         for (int i = 0; i < pocetFiguriekVdomceku; ++i) {
             if(domcek[i]->getFigurka() != nullptr) {
                 this->polickoHome->pridajPanacika(domcek[i]->getFigurka());
+                domcek[i]->getFigurka()->setIndexPolicka(this->polickoHome->getIndex());
                 domcek[i]->odstranPanacika();
+                pocetFiguriekVdomceku--;
                 break;
             }
         }

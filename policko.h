@@ -75,7 +75,7 @@ public:
         if (figurka == nullptr) {
             return this->graphic;
         }
-        figurka->getGraphic();
+        return figurka->getGraphic();
     }
 
     int getIndex() {

@@ -15,12 +15,13 @@ private:
 
     int pocetHracov = 0;
     hrac* hraci[4];
+    bool zpainac_hra = true;
 
     plocha* hernaPlocha;
 
 public:
 
-    hra(plocha hraciaPlocha);
+    hra(plocha* hraciaPlocha);
 
     void pridajHraca(hrac* hrac){
         hraci[pocetHracov] = hrac;
@@ -30,6 +31,8 @@ public:
     int getPocetHracov() {
         return pocetHracov;
     }
+
+    void hra_cyklus();
 
 };
 

@@ -155,10 +155,10 @@ plocha::plocha() {
 
 void plocha::update() {
 
-    panacik* figurka_test = new panacik();
-    figurka_test->setGraphic('M');
-    postavPanacikaNaIndex(1, figurka_test);
-    postavPanacikaNaIndex(17 , figurka_test);
+    //panacik* figurka_test = new panacik();
+    //figurka_test->setGraphic('M');
+    //postavPanacikaNaIndex(1, figurka_test);
+    //postavPanacikaNaIndex(12 , figurka_test);
 
 
 
@@ -171,9 +171,8 @@ void plocha::update() {
             std::cout << policka[j][i].getGraphic();
             std::cout << " ";
         }
-
     }
-
+    std::cout << " " << std::endl;
 }
 
 void plocha::postavPanacikaNaIndex(int index, panacik* figurka) {
