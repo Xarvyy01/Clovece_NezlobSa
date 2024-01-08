@@ -17,9 +17,8 @@ void hra::hra_cyklus() {
     int vyber = 0;
     while(true) {
         hrac* hrac = hraci[hracNaRade];
-
         if (hrac->getPocetFiguriekVDomceku() != 4) {
-            std::cout << "Na rade je hráč: " + std::to_string(hracNaRade + 1) << std::endl;
+            std::cout << "Na rade je hráč: " << (hracNaRade + 1) << std::endl;
             std::cout << "<===========================>" << std::endl;
             std::cout << "1: Hod Kockou" << std::endl;
             std::cout << "2: Kontrola Panačikov" << std::endl;
@@ -68,7 +67,7 @@ void hra::hra_cyklus() {
             int pokracuj;
             for (int i = 0; i < 3; ++i) {
                 int randomNumber = (rand() % 6 + 1);
-                std::cout << "Padla: " + std::to_string(randomNumber) << std::endl;
+                std::cout << "Padla: " << randomNumber << std::endl;
 
                 if (pokus == true) {
                     std::cout << "Stlačte 1 pre pokračovanie:" << std::endl;
@@ -95,4 +94,18 @@ void hra::hra_cyklus() {
         }
     }
 
+}
+
+void hra::posunHracaOhodKocou(int indexHraca, int indexPanacika, int hodKocou) {
+
+    hrac* hrac = hraci[indexHraca];
+
+    if (hrac->getPocetFiguriekVDomceku() != 4) {
+        panacik *figurka = hrac->vyberFigurkuByIndex(indexPanacika);
+        hernaPlocha->postavPanacikaNaIndex(figurka->getIndexPolicka() + hodKocou, figurka);
+    } else {
+        if (hodKocou == 6) {
+            hrac->polozFigurkuNaHomePolickoByIndex();
+        }
+    }
 }
