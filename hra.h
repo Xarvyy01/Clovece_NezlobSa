@@ -50,6 +50,12 @@ public:
         this->hernaPlocha = herna_plocha;
     }
 
+    void posunHracaOhodKocou(int indexHraca, int indexFigurky,int hodKocou);
+
+    int pocetFiguruekVdomcekuKtoryMaHrac(int index) {
+        hraci[index - 1]->getPocetFiguriekVDomceku();
+    }
+
 };
 
 

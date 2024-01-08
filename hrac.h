@@ -108,6 +108,10 @@ public:
 
     }
 
+    int getPocetFiguriekVdomceku() {
+        return pocetFiguriekVdomceku;
+    }
+
 };
 
 
