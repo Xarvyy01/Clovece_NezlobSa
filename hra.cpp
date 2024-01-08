@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <string>
 #include "hra.h"
 
 hra::hra() {

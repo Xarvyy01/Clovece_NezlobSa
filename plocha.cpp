@@ -258,7 +258,7 @@ std::vector<char> plocha::getHernaPlocha() {
                 plocha_char.push_back(policka[j][i].getGraphic());
 
         }
-        plocha_char.push_back('0');
+        plocha_char.push_back('\n');
     }
 
     return  plocha_char;
