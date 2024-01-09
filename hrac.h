@@ -98,6 +98,7 @@ public:
 
         for (int i = 0; i < pocetFiguriekVdomceku; ++i) {
             if(domcek[i]->getFigurka() != nullptr) {
+                pridajFigurkuNaPlochu(domcek[i]->getFigurka());
                 this->polickoHome->pridajPanacika(domcek[i]->getFigurka());
                 domcek[i]->getFigurka()->setIndexPolicka(this->polickoHome->getIndex());
                 domcek[i]->odstranPanacika();
@@ -110,6 +111,14 @@ public:
 
     int getPocetFiguriekVdomceku() {
         return pocetFiguriekVdomceku;
+    }
+
+    int getPocetFiguriekNaPloche() {
+        return pocetFiguriekNaPloche;
+    }
+
+    panacik* getFigurkaNaPlocheByIndex(int index) {
+        return figurkyPlocha[index];
     }
 
 };

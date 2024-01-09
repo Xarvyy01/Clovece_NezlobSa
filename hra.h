@@ -56,6 +56,19 @@ public:
         hraci[index - 1]->getPocetFiguriekVDomceku();
     }
 
+    std::vector<int> getIndexyFiguriekNaPloche(int indexHraca) {
+
+        std::vector<int> indexFiguriek;
+        indexFiguriek.clear();
+        hrac* hrac = hraci[indexHraca];
+
+        for (int i = 0; i < hrac->getPocetFiguriekNaPloche(); ++i) {
+            indexFiguriek.push_back(hrac->getFigurkaNaPlocheByIndex(i)->getIndexFigurky());
+        }
+
+        return indexFiguriek;
+    }
+
 };
 
 

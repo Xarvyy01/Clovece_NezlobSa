@@ -101,12 +101,13 @@ void hra::posunHracaOhodKocou(int indexHraca, int indexPanacika, int hodKocou) {
 
     hrac* hrac = hraci[indexHraca];
 
-    if (hrac->getPocetFiguriekVDomceku() != 4) {
-        panacik *figurka = hrac->vyberFigurkuByIndex(indexPanacika);
+    if (hodKocou < 6 && hrac->getPocetFiguriekVDomceku() != 4) {
+        panacik* figurka = hrac->vyberFigurkuByIndex(indexPanacika);
         hernaPlocha->postavPanacikaNaIndex(figurka->getIndexPolicka() + hodKocou, figurka);
-    } else {
-        if (hodKocou == 6) {
-            hrac->polozFigurkuNaHomePolickoByIndex();
-        }
     }
+    if (hodKocou == 6) {
+        hrac->polozFigurkuNaHomePolickoByIndex();
+    }
+
+
 }

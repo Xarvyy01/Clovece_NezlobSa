@@ -43,6 +43,7 @@ public:
 
     std::vector<char> getHernaPlocha();
 
+
 };
 
 
